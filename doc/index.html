@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1">
+  <title>MDPUB: Markdown Wechat Public</title>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <div class="row cf">
+    <div class="col">
+      <div class="header">
+        <h2><a href="https://github.com/barretlee/online-markdown">online-markdown</a></h2>
+      </div>
+      <textarea id="input" cols="100" rows="10">## 公众号 barretlee_com 专用编辑器
+
+GitHub 地址：[https://github.com/barretlee/online-markdown](https://github.com/barretlee/online-markdown)
+
+更多精彩内容请<ruby>关注<rt>扫码</rt></ruby>：
+
+![Barretlee's Wechat](http://images.cnblogs.com/cnblogs_com/hustskyking/464294/o_follow.jpg)
+
+### 一些示例
+
+单行高亮：``barretlee`` 测试
+
+这是一个脚注的测试 [^note]
+
+```javascript
+(function() {
+  var input, output;
+  var converter = new showdown.Converter();
+
+  function updateOutput() {
+      output.innerHTML = converter.makeHtml(input.value);
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    input = document.getElementById('input');
+    output = document.getElementById('output');
+
+    input.addEventListener('input', updateOutput, false);
+    input.addEventListener('keydown', updateOutput, false);
+
+    updateOutput();
+  });
+})();
+```
+
+```php
+echo 'hello,world'
+```
+
+下面是一个列表的示例，技术栈：
+
+1. Google Code Prettify
+2. Showdown.js
+3. Clipboard
+
+另外一个列表：
+
+- Google Code Prettify
+- Showdown.js
+- Clipboard
+
+表格示例：
+
+| h1    |    h2   |      h3 |
+|-------|---------|---------|
+| 100   | [a][1]  | ![b][2] |
+| *foo* | **bar** | ~~baz~~ |
+| *foo* | **bar** | ~~baz~~ |
+
+
+### Todo Example
+
+ - [ ] Mercury
+ - [x] Venus
+ - [x] Earth (Orbit/Moon)
+ - [x] Mars
+ - [ ] Jupiter
+ - [ ] Saturn
+
+[^note]: 测试是指测试
+
+</textarea>
+    </div>
+
+    <div class="col">
+      <div class="header">
+        <button class="btn button" data-clipboard-action="cut" data-clipboard-target="#output">复制</button>
+      </div>
+      <div id="output"></div>
+    </div>
+  </div>
+</body>
+
+</html>
