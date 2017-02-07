@@ -1991,5 +1991,4 @@ var IN_GLOBAL_SCOPE = false;
     }
   }
   checkPendingLanguages();
-
 }());

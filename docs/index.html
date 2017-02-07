@@ -1,101 +1,35 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="utf-8">
   <link rel="shoticon" href="./favicon.ico" type="image/x-icon">
   <meta name="viewport" content="initial-scale=1">
-  <title>MDPUB: Markdown Wechat Public</title>
+  <title>Online Markdown Converter</title>
   <script src="./js/index.js"></script>
+  <link rel="stylesheet" href="./themes/github-v2.css" id="themeId" />
 </head>
-
 <body>
-  <div class="row cf">
-    <div class="col">
-      <div class="header">
-        <h2><a href="https://github.com/barretlee/online-markdown">online-markdown</a></h2>
-      </div>
-      <textarea id="input" cols="100" rows="10">## 公众号 barretlee_com 专用编辑器
+<div class="topheader">
+  <a href="http://md.barretlee.com"><h1>WXMarkdown</h1></a>
+  <span>微信公众号格式化工具</span>
+  <ul>
+    <li class="forkbtn"><a href="https://github.com/barretlee/online-markdown" target="_blank">源码地址</a></li>
+    <li class="forkbtn"><a href="https://github.com/barretlee/online-markdown/issues/new" target="_blank">Issue讨论</a></li>
+    <li><a href="http://www.barretlee.com/" target="_blank">关于小胡子哥</a></li>
+    <li><iframe allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px" class="github-star" src="http://ghbtns.com/github-btn.html?user=barretlee&amp;repo=online-markdown&amp;type=watch&amp;count=true&amp;size=middle"></iframe></li>
+  </ul>
+</div>
+<textarea id="input" spellcheck="false"></textarea>
 
-GitHub 地址：[https://github.com/barretlee/online-markdown](https://github.com/barretlee/online-markdown)
+<button class="btn copy-button" style="display:none;" data-clipboard-action="cut" data-clipboard-target="#outputCtt">复制</button>
+<button class="btn convert-button">预览</button>
 
-更多精彩内容请<ruby>关注<rt>扫码</rt></ruby>：
-
-![Barretlee's Wechat](http://images.cnblogs.com/cnblogs_com/hustskyking/464294/o_follow.jpg)
-
-### 一些示例
-
-单行高亮：``barretlee`` 测试
-
-这是一个脚注的测试 [^note]
-
-```javascript
-(function() {
-  var input, output;
-  var converter = new showdown.Converter();
-
-  function updateOutput() {
-      output.innerHTML = converter.makeHtml(input.value);
-  }
-
-  document.addEventListener("DOMContentLoaded", function(event) {
-    input = document.getElementById('input');
-    output = document.getElementById('output');
-
-    input.addEventListener('input', updateOutput, false);
-    input.addEventListener('keydown', updateOutput, false);
-
-    updateOutput();
-  });
-})();
-```
-
-```php
-echo 'hello,world'
-```
-
-下面是一个列表的示例，技术栈：
-
-1. Google Code Prettify
-2. Showdown.js
-3. Clipboard
-
-另外一个列表：
-
-- Google Code Prettify
-- Showdown.js
-- Clipboard
-
-表格示例：
-
-| h1    |    h2   |      h3 |
-|-------|---------|---------|
-| 100   | [a][1]  | ![b][2] |
-| *foo* | **bar** | ~~baz~~ |
-| *foo* | **bar** | ~~baz~~ |
-
-
-### Todo Example
-
- - [ ] Mercury
- - [x] Venus
- - [x] Earth (Orbit/Moon)
- - [x] Mars
- - [ ] Jupiter
- - [ ] Saturn
-
-[^note]: 测试是指测试
-
-</textarea>
-    </div>
-
-    <div class="col">
-      <div class="header">
-        <button class="btn button" data-clipboard-action="cut" data-clipboard-target="#output">复制</button>
-      </div>
-      <div id="output"></div>
-    </div>
+<div id="output">
+  <div class="theme-wrapper">
+    <label>主题选择：</label><select class="theme"></select>
   </div>
-</body>
+  <div class="wrapper" id="outputCtt"></div>
+</div>
 
+</body>
 </html>

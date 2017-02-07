@@ -74,18 +74,141 @@
 
 pre.prettyprint {
   padding: 2px;
-  border: 1px solid #888
+  border: 1px solid #888;
+  border-radius: 0;
 }
 
 ol.linenums {
   margin-top: 0;
-  margin-bottom: 0
+  margin-bottom: 0;
+  padding-left: 8px !important;
+  overflow-x: auto;
+  li {
+    p {
+      white-space: nowrap !important;
+    }
+  }
+}
+.pln {
+  color: #000
+}
+
+@media screen {
+  .str {
+    color: #080
+  }
+  .kwd {
+    color: #008
+  }
+  .com {
+    color: #800
+  }
+  .typ {
+    color: #606
+  }
+  .lit {
+    color: #066
+  }
+  .pun, .opn, .clo {
+    color: #660
+  }
+  .tag {
+    color: #008
+  }
+  .atn {
+    color: #606
+  }
+  .atv {
+    color: #080
+  }
+  .dec, .var {
+    color: #606
+  }
+  .fun {
+    color: red
+  }
+}
+
+@media print, projection {
+  .str {
+    color: #060
+  }
+  .kwd {
+    color: #006;
+    font-weight: bold
+  }
+  .com {
+    color: #600;
+    font-style: italic
+  }
+  .typ {
+    color: #404;
+    font-weight: bold
+  }
+  .lit {
+    color: #044
+  }
+  .pun, .opn, .clo {
+    color: #440
+  }
+  .tag {
+    color: #006;
+    font-weight: bold
+  }
+  .atn {
+    color: #404
+  }
+  .atv {
+    color: #060
+  }
+}
+
+pre.prettyprint {
+  padding: 2px;
+  border: 1px solid #888;
+  font-family: Consolas, Menlo, Courier, monospace !important;
+}
+
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 18px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  li {
+    height: 18px;
+    code li {
+      white-space: nowrap;
+    }
+  }
+  code span {
+    font-size: 13px !important;
+    font-family: Consolas, Menlo, Courier, monospace !important;
+  }
+}
+
+.code-in-text {
+  color: #585858;
+  background: #f3f1f1;
+  span {
+    color: #585858;
+    background: #f3f1f1;
+    display: inline-block;
+    padding: 0 2px;
+    font-size: 14px;
+    font-family: Consolas, Menlo, Courier, monospace !important;
+  }
+}
+
+.prettyprint.code-in-text {
+  background: #f3f1f1;
+  font-family: Consolas, Menlo, Courier, monospace !important;
 }
 
 li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: none
+  list-style-type: decimal !important;
 }
 
 li.L1, li.L3, li.L5, li.L7, li.L9 {
-  background: #eee
+  background: transparent !important;
 }
