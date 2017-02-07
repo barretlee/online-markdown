@@ -10,7 +10,7 @@ module.exports = {
     },
     //入口文件输出配置
     output: {
-        path: 'doc/js/',
+        path: 'docs/js/',
         filename: '[name].js'
     },
     module: {
