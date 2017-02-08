@@ -2,9 +2,14 @@
 
 A online markdown converter specially for Wechat Public formatting.
 
-Online Address: <http://md.barretlee.com/>
+- Online Address: <http://md.barretlee.com/>
+- Issue & Suggestion: <https://github.com/barretlee/online-markdown/issues/new>
 
-LICENSE
----
+### Changelog
+
+- 支持更换代码样式主题
+- 代码长度溢出是横向滚动
+
+### LICENSE
 
 MIT. Thanks for @Phodal.

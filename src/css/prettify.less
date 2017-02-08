@@ -71,24 +71,6 @@
     color: #060
   }
 }
-
-pre.prettyprint {
-  padding: 2px;
-  border: 1px solid #888;
-  border-radius: 0;
-}
-
-ol.linenums {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0px !important;
-  overflow-x: auto;
-  li {
-    p {
-      white-space: nowrap !important;
-    }
-  }
-}
 .pln {
   color: #000
 }
@@ -164,26 +146,35 @@ ol.linenums {
 }
 
 pre.prettyprint {
-  padding: 2px;
-  border: 1px solid #888;
-  font-family: consolas, menlo, courier, monospace, 'Microsoft Yahei' !important;
+  border-radius: 0;
+  font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;
+  overflow-y: auto;
+}
+
+pre.prettyprint.linenums {
+  border: 1px solid #e2e2e2 !important;
+  padding: 8px 0 6px;
 }
 
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 18px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  list-style-type: none !important;
   li {
-    height: 18px;
-    code li {
-      white-space: nowrap;
+    code {
+      height: 20px !important;
+      line-height: 20px !important;
+      margin-left: -20px;
+      font-family: inherit !important;
+      display: flex;
+      span {
+        font-size: 13px !important;
+        line-height: 20px;
+        font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;
+      }
     }
-  }
-  code span {
-    font-size: 13px !important;
-    font-family: consolas, menlo, courier, monospace, 'Microsoft Yahei' !important;
   }
 }
 
@@ -196,19 +187,19 @@ ol.linenums {
     display: inline-block;
     padding: 0 2px;
     font-size: 14px;
-    font-family: consolas, menlo, courier, monospace, 'Microsoft Yahei' !important;
+    font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;
   }
 }
-
 .prettyprint.code-in-text {
   background: #f3f1f1;
-  font-family: consolas, menlo, courier, monospace, 'Microsoft Yahei' !important;
+  font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;
 }
 
-li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: decimal !important;
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  list-style-type: none !important;
 }
 
 li.L1, li.L3, li.L5, li.L7, li.L9 {
+  list-style-type: none !important;
   background: transparent !important;
 }
