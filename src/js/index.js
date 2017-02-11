@@ -135,6 +135,9 @@ var OnlineMarkdown = {
   updateOutput: function () {
     var val = converter.makeHtml($('#input').val());
     $('#output .wrapper').html(val);
+    $('#output li').each(function() {
+      $(this).html('<span>' + $(this).html() + '</span>');
+    });
     PR.prettyPrint();
   }
 };
