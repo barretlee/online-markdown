@@ -9,7 +9,8 @@
   <meta name="description" content="一款简单易用的微信公众号格式化工具，主要针对代码做格式化处理。">
   <title>Online Markdown Converter</title>
   <script src="./js/index.js"></script>
-  <link rel="stylesheet" href="./themes/github-v2.css" id="themeId" />
+  <link rel="stylesheet" href="./themes/github-v2.css" id="codeThemeId" />
+  <link rel="stylesheet" id="pageThemeId" />
 </head>
 <body>
 <div class="topheader">
@@ -28,8 +29,13 @@
 <button class="btn convert-button">预览</button>
 
 <div id="output">
-  <div class="theme-wrapper">
-    <label>主题选择：</label><select class="theme"></select>
+  <div class="themes-config">
+    <div class="theme-wrapper">
+      <label>页面主题选择：</label><select class="page-theme"></select>
+    </div>
+    <div class="theme-wrapper">
+      <label>代码主题选择：</label><select class="code-theme"></select>
+    </div>
   </div>
   <div class="wrapper" id="outputCtt"></div>
 </div>

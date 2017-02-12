@@ -3,6 +3,8 @@ require('../css/index.less');
 var $ = require("./jquery-3.1.1.js");
 var showdown = require("./showdown.js");
 var Clipboard = require("./clipboard.min.js");
+var CodeTheme = require("./theme/code-theme");
+var PageTheme = require("./theme/page-theme");
 
 require("./showdown-plugins/showdown-prettify-for-wechat.js");
 require("./showdown-plugins/showdown-github-task-list.js");
@@ -26,41 +28,7 @@ if (/\.barretlee\.com$/.test(location.hostname)) {
   document.domain = 'barretlee.com';
 }
 
-var themes = [
-  'atelier-cave-dark',
-  'atelier-cave-light',
-  'atelier-dune-dark',
-  'atelier-dune-light',
-  'atelier-estuary-dark',
-  'atelier-estuary-light',
-  'atelier-forest-dark',
-  'atelier-forest-light',
-  'atelier-heath-dark',
-  'atelier-heath-light',
-  'atelier-lakeside-dark',
-  'atelier-lakeside-light',
-  'atelier-plateau-dark',
-  'atelier-plateau-light',
-  'atelier-savanna-dark',
-  'atelier-savanna-light',
-  'atelier-seaside-dark',
-  'atelier-seaside-light',
-  'atelier-sulphurpool-dark',
-  'atelier-sulphurpool-light',
-  'github-light',
-  'github-v2',
-  'github',
-  'hemisu-dark',
-  'hemisu-light',
-  'tomorrow-night-blue',
-  'tomorrow-night-bright',
-  'tomorrow-night-eighties',
-  'tomorrow-night',
-  'tomorrow',
-  'tranquil-heart',
-  'vibrant-ink'
-];
-var currentTheme = 'tomorrow-night';
+
 var converter =  new showdown.Converter({
   extensions: ['prettify', 'tasklist', 'footnote'],
   tables: true
@@ -82,6 +50,8 @@ var OnlineMarkdown = {
   start: function() {
     this.bindEvt();
     this.updateOutput();
+    new CodeTheme();
+    new PageTheme();
     new Clipboard('.btn');
   },
   load: function() {
@@ -100,16 +70,6 @@ var OnlineMarkdown = {
   bindEvt: function() {
     var self = this;
     $('#input').on('input keydown paste', self.updateOutput);
-
-    var $options = $.map(themes, function(item) {
-      var selected = currentTheme === item ? ' selected' : '';
-      return '<option value="' + item + '"' + selected + '>' + item +'</option>';
-    });
-    $('.theme').html($options);
-    $('.theme').on('change', function() {
-      var val = $(this).val();
-      $("#themeId").attr('href', './themes/' + val + '.css');
-    }).trigger('change');
     var $copy = $('.copy-button');
     var $convert = $('.convert-button');
     $convert.on('click', function() {
@@ -132,6 +92,7 @@ var OnlineMarkdown = {
       $convert.trigger('click');
     }
   },
+
   updateOutput: function () {
     var val = converter.makeHtml($('#input').val());
     $('#output .wrapper').html(val);

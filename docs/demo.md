@@ -8,8 +8,9 @@ GitHub 地址：[https://github.com/barretlee/online-markdown](https://github.co
 
 - 适配 Android
 - 支持代码不转行，横向滚动条
+- 支持页面主题样式配置
 
-### 代码示例：
+### 代码示例
 
 ```javascript
 var OnlineMarkdown = {
@@ -43,6 +44,7 @@ var OnlineMarkdown = {
 
 OnlineMarkdown.init();
 ```
+---
 
 上面是 `JavaScript`，下面是 `php`：
 
@@ -50,7 +52,7 @@ OnlineMarkdown.init();
 echo 'hello,world'
 ```
 
-### 表格示例：
+### 表格示例
 
 | 品类 | 个数 | 备注 |
 |-----|-----|------|
