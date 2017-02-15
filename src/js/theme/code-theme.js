@@ -34,7 +34,7 @@ var themes = [
   'tranquil-heart',
   'vibrant-ink'
 ];
-var currentTheme = 'tomorrow-night';
+var currentTheme = 'atelier-forest-light';
 
 let CodeTheme = function () {
   this.init();

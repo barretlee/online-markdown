@@ -5,7 +5,7 @@ var themes = [
   '字号偏大-间距偏大-窄屏模式',
   '字号偏大-间距偏大-宽屏模式'
 ];
-var currentTheme = 'tomorrow-night';
+var currentTheme = '字号偏大-间距偏大-宽屏模式';
 
 let PageTheme = function () {
   this.init();
