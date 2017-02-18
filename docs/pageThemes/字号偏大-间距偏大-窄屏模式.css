@@ -35,5 +35,5 @@
 .wrapper ul li span, .wrapper ol li span {
   line-height: 22px;
   font-size: 14px !important;
-  为列表增加文字颜色
+  color: #4a4a4a;
 }
