@@ -15420,12 +15420,6 @@ var OnlineMarkdown = {
   updateOutput: function () {
     var val = converter.makeHtml($('#input').val());
     $('#output .wrapper').html(val);
-    $('#outputCtt li li li').each(function() {
-      $(this).html('<span>' + $(this).html() + '</span>');
-    });
-    $('#outputCtt li li').each(function() {
-      $(this).html('<span>' + $(this).html() + '</span>');
-    });
     $('#outputCtt li').each(function() {
       $(this).html('<span>' + $(this).html() + '</span>');
     });
