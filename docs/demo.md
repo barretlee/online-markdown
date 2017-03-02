@@ -61,4 +61,4 @@ echo 'hello,world'
 
 ### 关于小胡子哥
 
-![微信公众号](./imgs/qrcode.jpg)
+![微信公众号](http://md.barretlee.com/imgs/qrcode.jpg)

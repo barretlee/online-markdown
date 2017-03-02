@@ -8,9 +8,8 @@
 }
 .wrapper p {
   font-size: 16px;
-  text-align: justify;
   white-space: pre-line;
-  line-height: 30px;
+  line-height: 28px;
   color: #4a4a4a;
 }
 .wrapper blockquote {
