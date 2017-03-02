@@ -96,13 +96,13 @@ var OnlineMarkdown = {
   updateOutput: function () {
     var val = converter.makeHtml($('#input').val());
     $('#output .wrapper').html(val);
-    $('#outputCtt>ul>li li li').each(function() {
+    $('#outputCtt li li li').each(function() {
       $(this).html('<span>' + $(this).html() + '</span>');
     });
-    $('#outputCtt>ul li li').each(function() {
+    $('#outputCtt li li').each(function() {
       $(this).html('<span>' + $(this).html() + '</span>');
     });
-    $('#outputCtt>ul li').each(function() {
+    $('#outputCtt li').each(function() {
       $(this).html('<span>' + $(this).html() + '</span>');
     });
     PR.prettyPrint();
