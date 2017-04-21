@@ -21,7 +21,9 @@
     "url": "https://github.com/barretlee/online-markdown/issues"
   },
   "homepage": "https://github.com/barretlee/online-markdown",
-  "dependencies": {},
+  "dependencies": {
+    "copy-webpack-plugin": "~4.0.1"
+  },
   "devDependencies": {
     "css-loader": "^0.26.1",
     "file-loader": "^0.10.0",

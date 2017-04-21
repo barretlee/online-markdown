@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var path = require('path');
 // var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
@@ -21,5 +23,52 @@ module.exports = {
             { test: /\.less$/, loader: 'style-loader!css-loader!less-loader?sourceMap'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            { 
+                context: path.join(__dirname, './src/css/pageThemes'),
+                from: '*', 
+                to: '../pageThemes',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src/imgs'),
+                from: '*', 
+                to: '../imgs',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src/css/themes'),
+                from: '*', 
+                to: '../themes',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src'),
+                from: "index.html",
+                to: '../index.html',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src'),
+                from: "demo.md",
+                to: '../demo.md',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src'),
+                from: "favicon.ico",
+                to: '../favicon.ico',
+                force: true
+            },
+            { 
+                context: path.join(__dirname, './src'),
+                from: "CNAME",
+                to: '../CNAME',
+                toType: 'file',
+                force: true
+            }
+        ])
+    ]
 };

@@ -151,10 +151,15 @@ pre.prettyprint {
   overflow-y: auto;
 }
 
+pre.prettyprint {
+  border-radius: 0;
+  font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;
+  overflow-y: auto;
+}
+
 pre.prettyprint.linenums {
   border: 1px solid #e2e2e2 !important;
   padding: 8px 0 6px;
-  padding-right: 15px;
 }
 
 ol.linenums {
@@ -164,9 +169,6 @@ ol.linenums {
   -webkit-overflow-scrolling: touch;
   list-style-type: none !important;
   li {
-    &>span {
-      display: table-footer-group;
-    }
     code {
       height: 20px !important;
       line-height: 20px !important;
