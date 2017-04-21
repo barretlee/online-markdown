@@ -169,13 +169,24 @@ ol.linenums {
   -webkit-overflow-scrolling: touch;
   list-style-type: none !important;
   li {
+    &>span {
+      word-break: inherit !important;
+      white-space: nowrap !important;
+      display: block;
+    }
+    &>span>span {
+      word-break: inherit !important;
+      white-space: nowrap !important;
+      display: block;
+    }
     code {
-      height: 20px !important;
       line-height: 20px !important;
       margin-left: -20px;
       font-family: inherit !important;
+      white-space: pre !important;
       display: flex;
       span {
+        white-space: inherit !important;
         font-size: 13px !important;
         line-height: 20px;
         font-family: 'consolas', 'menlo', 'courier', 'monospace', 'Microsoft Yahei' !important;

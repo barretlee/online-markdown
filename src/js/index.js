@@ -97,8 +97,8 @@ var OnlineMarkdown = {
     var val = converter.makeHtml($('#input').val());
     $('#output .wrapper').html(val);
     PR.prettyPrint();
-    $('#outputCtt ul>li').each(function() {
-      $(this).html('<span>' + $(this).html() + '</span>');
+    $('#outputCtt li').each(function() {
+      $(this).html('<span><span>' + $(this).html() + '</span></span>');
     });
   }
 };
