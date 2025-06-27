@@ -29,7 +29,7 @@ var OnlineMarkdown = {
     return $.ajax({
       type: 'GET',
       url: params.path || './demo.md',
-      dateType: 'text',
+      dataType: 'text',
       timeout: 2000
     }).then(function(data) {
       $('#input').val(data);

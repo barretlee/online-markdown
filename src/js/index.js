@@ -58,7 +58,7 @@ var OnlineMarkdown = {
     return $.ajax({
       type: 'GET',
       url: params.path || './demo.md',
-      dateType: 'text',
+      dataType: 'text',
       data: {
         _t: new Date() * 1
       },
